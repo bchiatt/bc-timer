@@ -5,13 +5,42 @@ html
     meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
     title
     link(href='css/ionic.app.css', rel='stylesheet')
+    link(href='css/style.css', rel='stylesheet')
     script(src='lib/ionic/js/ionic.bundle.js')
     script(src='cordova.js')
     script(src='js/app.js')
     script(src='js/main_controller.js')
   body(ng-app='bc-timer', ng-controller='MainCtrl')
-    ion-pane
-      ion-header-bar.bar-stable
-        h1.title Buzz Timer
-      ion-content
-        h3 {{title}}
+    .bar.bar-header.bar-stable
+      h1.title Buzz Timer
+    ion-content.has-header
+      .row
+        .col
+          .display
+            | {{remain | date: 'mm'}}
+          .colon
+            | :
+        .col
+          .display
+            | {{remain | date: 'ss'}}
+      .row
+        .col.time
+          p Minutes
+          .row
+            .col
+              button.button.button-balanced(ng-click='add(300000)') 5
+            .col
+              button.button.button-balanced(ng-click='add(60000)') 1
+        .col.time
+          p Seconds
+          .row
+            .col
+              button.button.button-balanced(ng-click='add(10000)') 10
+            .col
+              button.button.button-balanced(ng-click='add(1000)') 1
+      .row
+        button.button.button-full.button-positive(ng-click='start()', ng-show='stopped') Start
+      .row
+        button.button.button-full.button-assertive(ng-click='stop()', ng-hide='stopped') Stop
+      .row
+        button.button.button-full.button-energized(ng-click='clear()') Clear

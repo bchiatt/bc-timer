@@ -1,1 +1,38 @@
-/* Empty. Add your own CSS if you like */
+.display, .colon{
+  display: inline-block;
+  height: 80px;
+}
+
+.display{
+  margin-top: 10px;
+  font-size: 80px;
+  text-align: center;
+  line-height: 60px;
+  height: 60px;
+  width: 80%;
+}
+
+.colon{
+  font-size: 80px;
+  text-align: right;
+  width: 15%;
+}
+
+.time{
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 0;
+}
+
+.time p{
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 0;
+  vertical-align: bottom;
+  font-size: 1.5em;
+}
+
+.button-full{
+  height: 70px;
+}
